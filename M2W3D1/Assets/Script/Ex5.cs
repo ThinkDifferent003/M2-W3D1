@@ -23,7 +23,7 @@ public class Ex5 : MonoBehaviour
             {
                 int[] newarray = new int[dim];
                 newarray[i] = array[dim - 1];
-                Debug.Log("Array diminuito da : " + array.Length + ", a" + newarray.Length);
+                Debug.Log("Array diminuito da : " + array.Length + ", a " + newarray.Length);
                 return newarray;
             }
             else if (dim >  array.Length)
