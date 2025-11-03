@@ -10,36 +10,41 @@ public class Ex5 : MonoBehaviour
     void Start()
     {
         int[] primoarray = CambiaDimensioneArray(arraybase , dimension);
-       
+        Debug.Log("Nuova dimensione array = " + primoarray.Length);
 
     
 
     }
     int []CambiaDimensioneArray (int[] array, int dim)
     {
-        for (int i = 0; i < array.Length; i++)
-        {
-            if (dim < array.Length)
-            {
-                int[] newarray = new int[dim];
-                newarray[i] = array[dim - 1];
-                Debug.Log("Array diminuito da : " + array.Length + ", a " + newarray.Length);
-                return newarray;
-            }
-            else if (dim >  array.Length)
-            {
-                int[] secondarray = new int[dim];
-                secondarray[i] = array[i];
-                Debug.Log("Array aumentato da : " + array.Length + ", a " + secondarray.Length );
-                return secondarray;
-            }
-            else if (dim == array.Length)
+         if (dim == array.Length)
             {
                 Debug.Log("Array uguale");
                 return array;
             }
-        }
-        return array;
+
+         else if (dim < array.Length)
+            {
+                int[] newarray = new int[dim];
+                for (int i = 0; i < dim; i ++)
+                {
+                    newarray[i] = array[i];
+                Debug.Log("Array diminuito");
+                }
+              
+                return newarray;
+            }
+         else 
+            {
+                int[] secondarray = new int[dim];
+                for (int i = 0; i< array.Length; i ++)
+                {
+                    secondarray[i] = array[i];
+                Debug.Log("Array aumentato");
+                }
+                return secondarray;
+            }
+       
 
 
     }
